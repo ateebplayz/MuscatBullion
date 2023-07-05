@@ -47,7 +47,7 @@ export default function Home() {
 
   const fetchQuotas = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/prices');
+      const response = await axios.get('http://muscatbullionproject.grabyourservices.com:5000/api/prices');
       setData(response.data)
     } catch (e) {
       console.log('Error while fetching data. ' + e)
