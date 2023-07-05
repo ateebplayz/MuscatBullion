@@ -7,8 +7,8 @@ import requests
 import time
 from flask_cors import CORS
 
-login = 70736665
-password = 'odh2ljir'
+login = 71380062
+password = 'g5mmkgqf'
 server = 'MetaQuotes-Demo'
 path = "C:/Program Files/MetaTrader 5/terminal64.exe"
 
@@ -127,4 +127,4 @@ def get_prices():
         return jsonify(response)
     
 if __name__ == '__main__':
-    app.run()
+    app.run(host ='0.0.0.0', port=5000)
