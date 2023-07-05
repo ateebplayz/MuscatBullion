@@ -1,0 +1,19 @@
+.quota {
+    width: 275px;
+    height: fit-content;
+    margin: 10px;
+    background-color: #111;
+    border-radius: 15px;
+    padding: 30px 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all ease;
+}
+.quota:hover {
+    width: 300px;
+    padding-top: 37.5px;
+    padding-botom: 37.5px;
+}
