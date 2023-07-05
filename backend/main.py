@@ -46,7 +46,7 @@ def update_margins():
     global margins
     while True:
         try:
-            response = requests.get('http://localhost:5001/api/margins')  # Send request to retrieve margins data
+            response = requests.get('http://muscatbullionproject.grabyourservices.com:5001/api/margins')  # Send request to retrieve margins data
             response_data = response.json()
             if response_data.get('code') == 200:
                 margins = response_data.get('data')  # Update margins with the received data

@@ -16,7 +16,7 @@ function Admin() {
         router.push('/admin/login')
     }
     const setMargin = async () => {
-        const resp = await axios.get('http://localhost:5001/api/margins')
+        const resp = await axios.get('http://muscatbullionproject.grabyourservices.com:5001/api/margins')
         setMargins(resp.data.data || [])
     }
     setMargin()

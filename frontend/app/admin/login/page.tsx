@@ -11,7 +11,7 @@ function AdminLogin() {
 
     useEffect(() => {
         const checkToken = async () => {
-            const req = await axios.get(`http://localhost:5001/api/users/verify/${token}`)
+            const req = await axios.get(`http://muscatbullionproject.grabyourservices.com:5001/api/users/verify/${token}`)
             if(req.data.code === 200) {
                 localStorage.setItem('token', req.data.token)
                 localStorage.setItem('username', req.data.username)
@@ -34,7 +34,7 @@ function AdminLogin() {
     }
     
     const handleLoginButton = async () => {
-        const req = await axios.post('http://localhost:5001/api/users', credentials)    
+        const req = await axios.post('http://muscatbullionproject.grabyourservices.com:5001/api/users', credentials)    
         console.log(req, req.data, req.data.code, req.data.token)    
         if(req.data.code === 200) {
             localStorage.setItem('token', req.data.token)
