@@ -7,8 +7,8 @@ import requests
 import time
 from flask_cors import CORS
 
-login = 70736665
-password = 'odh2ljir'
+login = 71380062
+password = 'g5mmkgqf'
 server = 'MetaQuotes-Demo'
 path = "C:/Program Files/MetaTrader 5/terminal64.exe"
 
@@ -46,7 +46,7 @@ def update_margins():
     global margins
     while True:
         try:
-            response = requests.get('http://localhost:5001/api/margins')  # Send request to retrieve margins data
+            response = requests.get('http://muscatbullionproject.grabyourservices.com:5001/api/margins')  # Send request to retrieve margins data
             response_data = response.json()
             if response_data.get('code') == 200:
                 margins = response_data.get('data')  # Update margins with the received data
@@ -127,4 +127,4 @@ def get_prices():
         return jsonify(response)
     
 if __name__ == '__main__':
-    app.run()
+    app.run(host ='0.0.0.0', port=5000)
