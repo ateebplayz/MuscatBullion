@@ -33,7 +33,7 @@ export const Editor = ({margin: {_id, id, value}}: {margin: margin}) => {
   )
 }
 export const Editors = ({editors}: {editors: margin[]}) => {
-    const editorList = editors.map((editor: margin) => <Editor margin={editor} />)
+    const editorList = editors.map((editor, index) => <Editor key={index} margin={editor} />)
     return (
         
         <div className='flex flex-wrap flex-row justify-evenly'>
