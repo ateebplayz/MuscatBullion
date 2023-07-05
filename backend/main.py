@@ -75,13 +75,13 @@ def update_data():
                 data = [
                     {
                         'symbol': 'XAUUSD',
-                        'ask': gold_info.ask + margins[1]['value'] + 0.3,
-                        'bid': gold_info.bid - margins[0]['value'] - 0.3,
+                        'ask': round(gold_info.ask + margins[1]['value'] + 0.3, 5),
+                        'bid': round(gold_info.bid - margins[0]['value'] - 0.3, 5),
                     },
                     {
                         'symbol': 'XAGUSD',
-                        'ask': silver_info.ask + margins[2]['value'],
-                        'bid': silver_info.bid - margins[3]['value']
+                        'ask': round(silver_info.ask + margins[2]['value'], 5),
+                        'bid': round(silver_info.bid - margins[3]['value'],5)
                     }
                 ]
         
