@@ -110,13 +110,13 @@ def get_prices():
         dataOmrGm = [
                 {
                     'symbol': 'XAUUSD',
-                    'ask': round(round(dataOmrT[0]['ask'] / 116.64, 3) + margins[5]['value'], 2),
-                    'bid': round(round(dataOmrT[0]['bid']/ 116.64, 3) - margins[4]['value'], 2),
+                    'ask': round(round(dataOmrT[0]['ask'] / 116.64, 3) + margins[5]['value'], 3),
+                    'bid': round(round(dataOmrT[0]['bid']/ 116.64, 3) - margins[4]['value'], 3),
                 },
                 {
                     'symbol': 'XAGUSD',
-                    'ask': round(round(dataOmrT[1]['ask'] / 1000, 3) + margins[5]['value'], 2),
-                    'bid': round(round(dataOmrT[1]['bid']/ 1000, 3) - margins[4]['value'], 2),
+                    'ask': round(round(dataOmrT[1]['ask'] / 1000, 3) + margins[5]['value'], 3),
+                    'bid': round(round(dataOmrT[1]['bid']/ 1000, 3) - margins[4]['value'], 3),
                 }
             ]
         response = {
