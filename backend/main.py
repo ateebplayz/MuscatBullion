@@ -9,6 +9,10 @@ from flask_cors import CORS
 
 login = 71380062
 password = 'g5mmkgqf'
+'''
+login = 71380062
+password = 'g5mmkgqf'
+'''
 server = 'MetaQuotes-Demo'
 path = "C:/Program Files/MetaTrader 5/terminal64.exe"
 
@@ -86,13 +90,13 @@ def update_data():
                 data = [
                     {
                         'symbol': 'XAUUSD',
-                        'ask': format(gold_info.ask + margins[1]['value'] + 0.3 + 0.0000001, '.2f'),
-                        'bid': format(gold_info.bid - margins[0]['value'] - 0.3 + 0.0000001, '.2f'),
+                        'ask': float(format(gold_info.ask + margins[1]['value'] + 0.3, '.2f')),
+                        'bid': float(format(gold_info.bid - margins[0]['value'] - 0.3, '.2f')),
                     },
                     {
                         'symbol': 'XAGUSD',
-                        'ask': format(silver_info.ask + margins[2]['value'] + 0.0000001, '.2f'),
-                        'bid': format(silver_info.bid - margins[3]['value'] + 0.0000001, '.2f'),
+                        'ask': float(format(silver_info.ask + margins[2]['value'], '.2f')),
+                        'bid': float(format(silver_info.bid - margins[3]['value'], '.2f')),
                     }
                 ]
         
@@ -106,28 +110,29 @@ update_thread.start()
 @app.route('/api/prices', methods=['GET'])
 def get_prices():
     with data_lock:
+        print(data)
         dataOmrT = [
             {
                 'symbol': 'XAUUSD',
-                'ask': format(data[0]['ask'] * 1.4485 + margins[7]['value'] + 0.0000001, '.3f'),
-                'bid': format(data[0]['bid'] * 1.4485 - margins[6]['value'] + 0.0000001, '.3f'),
+                'ask': float(format(data[0]['ask'] * 1.4485 + margins[7]['value'], '.3f')),
+                'bid': float(format(data[0]['bid'] * 1.4485 - margins[6]['value'], '.3f')),
             },
             {
                 'symbol': 'XAGUSD',
-                'ask': format(silver_info.ask * 13 + margins[10]['value'] + 0.0000001, '.3f'),
-                'bid': format(silver_info.bid * 13 - margins[11]['value'] + 0.0000001, '.3f'),
+                'ask': float(format(silver_info.ask * 13 + margins[10]['value'], '.3f')),
+                'bid': float(format(silver_info.bid * 13 - margins[11]['value'], '.3f')),
             }
         ]
         dataOmrGm = [
             {
                 'symbol': 'XAUUSD',
-                'ask': format(dataOmrT[0]['ask'] / 116.64 + margins[5]['value'], '.3f'),
-                'bid': format(dataOmrT[0]['bid'] / 116.64 - margins[4]['value'], '.3f'),
+                'ask': float(format(dataOmrT[0]['ask'] / 116.64 + margins[5]['value'], '.3f')),
+                'bid': float(format(dataOmrT[0]['bid'] / 116.64 - margins[4]['value'], '.3f'),)
             },
             {
                 'symbol': 'XAGUSD',
-                'ask': format(dataOmrT[1]['ask'] / 1000 + margins[5]['value'], '.3f'),
-                'bid': format(dataOmrT[1]['bid'] / 1000 - margins[4]['value'], '.3f'),
+                'ask': float(format(dataOmrT[1]['ask'] / 1000 + margins[5]['value'], '.3f')),
+                'bid': float(format(dataOmrT[1]['bid'] / 1000 - margins[4]['value'], '.3f'),)
             }
         ]
         response = {
@@ -138,4 +143,4 @@ def get_prices():
         return jsonify(response)
     
 if __name__ == '__main__':
-    app.run(host ='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0',port=5000)
