@@ -86,13 +86,13 @@ def update_data():
                 data = [
                     {
                         'symbol': 'XAUUSD',
-                        'ask': format(gold_info.ask + margins[1]['value'] + 0.3, '.2f'),
-                        'bid': format(gold_info.bid - margins[0]['value'] - 0.3, '.2f'),
+                        'ask': format(gold_info.ask + margins[1]['value'] + 0.3 + 0.0000001, '.2f'),
+                        'bid': format(gold_info.bid - margins[0]['value'] - 0.3 + 0.0000001, '.2f'),
                     },
                     {
                         'symbol': 'XAGUSD',
-                        'ask': format(silver_info.ask + margins[2]['value'], '.2f'),
-                        'bid': format(silver_info.bid - margins[3]['value'], '.2f'),
+                        'ask': format(silver_info.ask + margins[2]['value'] + 0.0000001, '.2f'),
+                        'bid': format(silver_info.bid - margins[3]['value'] + 0.0000001, '.2f'),
                     }
                 ]
         
@@ -109,13 +109,13 @@ def get_prices():
         dataOmrT = [
             {
                 'symbol': 'XAUUSD',
-                'ask': format(data[0]['ask'] * 1.4485 + margins[7]['value'], '.3f'),
-                'bid': format(data[0]['bid'] * 1.4485 - margins[6]['value'], '.3f'),
+                'ask': format(data[0]['ask'] * 1.4485 + margins[7]['value'] + 0.0000001, '.3f'),
+                'bid': format(data[0]['bid'] * 1.4485 - margins[6]['value'] + 0.0000001, '.3f'),
             },
             {
                 'symbol': 'XAGUSD',
-                'ask': format(silver_info.ask * 13 + margins[10]['value'], '.3f'),
-                'bid': format(silver_info.bid * 13 - margins[11]['value'], '.3f'),
+                'ask': format(silver_info.ask * 13 + margins[10]['value'] + 0.0000001, '.3f'),
+                'bid': format(silver_info.bid * 13 - margins[11]['value'] + 0.0000001, '.3f'),
             }
         ]
         dataOmrGm = [
