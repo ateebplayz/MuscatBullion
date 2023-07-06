@@ -39,7 +39,18 @@ start_mt5(username=login, password=password, server=server, path=path)
 app = Flask(__name__)
 CORS(app)
 dataOmr = []
-data = []
+data = [
+        {
+            'symbol': 'XAUUSD',
+            'ask': 0,
+            'bid': 0,
+        },
+        {
+            'symbol': 'XAGUSD',
+            'ask': 0,
+            'bid': 0,
+        }
+       ]
 margins = []  # Initialize margins as an empty list
 
 def update_margins():
