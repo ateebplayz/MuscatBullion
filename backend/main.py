@@ -95,18 +95,6 @@ update_thread.start()
 @app.route('/api/prices', methods=['GET'])
 def get_prices():
     with data_lock:
-        dataOmrGm = [
-                {
-                    'symbol': 'XAUUSD',
-                    'ask': round(round(data[0]['ask'] / 116.64, 3) + margins[5]['value'], 2),
-                    'bid': round(round(data[0]['bid']/ 116.64, 3) - margins[4]['value'], 2),
-                },
-                {
-                    'symbol': 'XAGUSD',
-                    'ask': round(silver_info.ask / 1000, 3) + margins[9]['value'],
-                    'bid': round(silver_info.bid / 1000, 3) - margins[8]['value'],
-                }
-            ]
         dataOmrT = [
                 {
                     'symbol': 'XAUUSD',
@@ -119,6 +107,18 @@ def get_prices():
                     'bid': round(silver_info.bid * 13, 3) - margins[11]['value'],
                 }
         ]
+        dataOmrGm = [
+                {
+                    'symbol': 'XAUUSD',
+                    'ask': round(round(dataOmrT[0]['ask'] / 116.64, 3) + margins[5]['value'], 2),
+                    'bid': round(round(dataOmrT[0]['bid']/ 116.64, 3) - margins[4]['value'], 2),
+                },
+                {
+                    'symbol': 'XAGUSD',
+                    'ask': round(round(dataOmrT[1]['ask'] / 1000, 3) + margins[5]['value'], 2),
+                    'bid': round(round(dataOmrT[1]['bid']/ 1000, 3) - margins[4]['value'], 2),
+                }
+            ]
         response = {
             'data': data,
             'dataOmrGm': dataOmrGm,
