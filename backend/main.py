@@ -98,25 +98,25 @@ def get_prices():
         dataOmrGm = [
                 {
                     'symbol': 'XAUUSD',
-                    'ask': round(round(data[0]['ask'] / 116.64, 5) + margins[5]['value'], 5),
-                    'bid': round(round(data[0]['bid']/ 116.64, 5) - margins[4]['value'], 5),
+                    'ask': round(round(data[0]['ask'] / 116.64, 5) + margins[5]['value'], 2),
+                    'bid': round(round(data[0]['bid']/ 116.64, 5) - margins[4]['value'], 2),
                 },
                 {
                     'symbol': 'XAGUSD',
-                    'ask': round(silver_info.ask / 1000, 5) + margins[9]['value'],
-                    'bid': round(silver_info.bid / 1000, 5) - margins[8]['value'],
+                    'ask': round(silver_info.ask / 1000, 2) + margins[9]['value'],
+                    'bid': round(silver_info.bid / 1000, 2) - margins[8]['value'],
                 }
             ]
         dataOmrT = [
                 {
                     'symbol': 'XAUUSD',
-                    'ask': round(data[0]['ask'] * 1.4485, 5) + margins[7]['value'],
-                    'bid': round(data[0]['bid'] * 1.4485, 5) - margins[6]['value'],
+                    'ask': round(data[0]['ask'] * 1.4485, 3) + margins[7]['value'],
+                    'bid': round(data[0]['bid'] * 1.4485, 3) - margins[6]['value'],
                 },
                 {
                     'symbol': 'XAGUSD',
-                    'ask': round(silver_info.ask * 13, 5) + margins[10]['value'],
-                    'bid': round(silver_info.bid * 13, 5) - margins[11]['value'],
+                    'ask': round(silver_info.ask * 13, 3) + margins[10]['value'],
+                    'bid': round(silver_info.bid * 13, 3) - margins[11]['value'],
                 }
         ]
         response = {
