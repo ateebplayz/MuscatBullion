@@ -123,10 +123,10 @@ export default function Home() {
                   <div className='m-hint'>ASK</div> <div className='m-title' >أسعار حية (24 قيراط)</div>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>${data.data[0].ask}</span> <span>($)أوقية باردة</span>
+                  <span className='price'>${data.data[0].ask}</span> <span>($) أوقية الذهب</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>${data.data[1].ask}</span> <span>($)أونصة الفضة</span>
+                  <span className='price'>${data.data[1].ask}</span> <span>($) أوقية الفضة</span>
                 </div>
               </div>
               <div className='col p-5 mt-5  d-flex flex-column m-card'>
@@ -134,16 +134,16 @@ export default function Home() {
                   <div className='m-hint'>SELL</div> <div className='m-title' >أسعار ريال عماني مباشر (24 قيراط)</div>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>{data.dataOmrGm[0].ask} OMR</span> <span>بارد لكل جرام</span>
+                  <span className='price'>{data.dataOmrGm[0].ask} OMR</span> <span>الذهب لكل جرام</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>{data.dataOmrT[0].ask} OMR</span> <span>جولد تن تولا بار</span>
+                  <span className='price'>{data.dataOmrT[0].ask} OMR</span> <span>الذهب تين تولا بار</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>{data.dataOmrGm[1].ask} OMR</span> <span>الفضة لكل جرام</span>
+                  <span className='price'>{data.dataOmrGm[1].ask} OMR</span> <span>أوقية الذهب</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>{data.dataOmrT[1].ask} OMR</span> <span>كيلو الفضة بار</span>
+                  <span className='price'>{data.dataOmrT[1].ask} OMR</span> <span>أوقية الفضة</span>
                 </div>
               </div>
             </div>
