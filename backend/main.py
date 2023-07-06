@@ -75,13 +75,13 @@ def update_data():
                 data = [
                     {
                         'symbol': 'XAUUSD',
-                        'ask': "{:.2f}".format(gold_info.ask + margins[1]['value'] + 0.3),
-                        'bid': "{:.2f}".format(gold_info.bid - margins[0]['value'] - 0.3),
+                        'ask': format(gold_info.ask + margins[1]['value'] + 0.3, '.2f'),
+                        'bid': format(gold_info.bid - margins[0]['value'] - 0.3, '.2f'),
                     },
                     {
                         'symbol': 'XAGUSD',
-                        'ask': "{:.2f}".format(silver_info.ask + margins[2]['value']),
-                        'bid': "{:.2f}".format(silver_info.bid - margins[3]['value'])
+                        'ask': format(silver_info.ask + margins[2]['value'], '.2f'),
+                        'bid': format(silver_info.bid - margins[3]['value'], '.2f'),
                     }
                 ]
         
@@ -96,29 +96,29 @@ update_thread.start()
 def get_prices():
     with data_lock:
         dataOmrT = [
-                {
-                    'symbol': 'XAUUSD',
-                    'ask': "{:.3f}".format((data[0]['ask'] * 1.4485) + margins[7]['value']) ,
-                    'bid': "{:.3f}".format((data[0]['bid'] * 1.4485) - margins[6]['value']) ,
-                },
-                {
-                    'symbol': 'XAGUSD',
-                    'ask': "{:.3f}".format((silver_info.ask * 13) + margins[10]['value']),
-                    'bid': "{:.3f}".format((silver_info.bid * 13) - margins[11]['value']),
-                }
+            {
+                'symbol': 'XAUUSD',
+                'ask': format(data[0]['ask'] * 1.4485 + margins[7]['value'], '.3f'),
+                'bid': format(data[0]['bid'] * 1.4485 - margins[6]['value'], '.3f'),
+            },
+            {
+                'symbol': 'XAGUSD',
+                'ask': format(silver_info.ask * 13 + margins[10]['value'], '.3f'),
+                'bid': format(silver_info.bid * 13 - margins[11]['value'], '.3f'),
+            }
         ]
         dataOmrGm = [
-                {
-                    'symbol': 'XAUUSD',
-                    'ask': round((dataOmrT[0]['ask'] / 116.64) + margins[5]['value'], 3),
-                    'bid': round((dataOmrT[0]['bid']/ 116.64) - margins[4]['value'], 3),
-                },
-                {
-                    'symbol': 'XAGUSD',
-                    'ask': round((dataOmrT[1]['ask'] / 1000) + margins[5]['value'], 3),
-                    'bid': round((dataOmrT[1]['bid']/ 1000) - margins[4]['value'], 3),
-                }
-            ]
+            {
+                'symbol': 'XAUUSD',
+                'ask': format(dataOmrT[0]['ask'] / 116.64 + margins[5]['value'], '.3f'),
+                'bid': format(dataOmrT[0]['bid'] / 116.64 - margins[4]['value'], '.3f'),
+            },
+            {
+                'symbol': 'XAGUSD',
+                'ask': format(dataOmrT[1]['ask'] / 1000 + margins[5]['value'], '.3f'),
+                'bid': format(dataOmrT[1]['bid'] / 1000 - margins[4]['value'], '.3f'),
+            }
+        ]
         response = {
             'data': data,
             'dataOmrGm': dataOmrGm,
