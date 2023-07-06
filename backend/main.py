@@ -75,13 +75,13 @@ def update_data():
                 data = [
                     {
                         'symbol': 'XAUUSD',
-                        'ask': round(gold_info.ask + margins[1]['value'] + 0.3, 2),
-                        'bid': round(gold_info.bid - margins[0]['value'] - 0.3, 2),
+                        'ask': "{:.2f}".format(gold_info.ask + margins[1]['value'] + 0.3),
+                        'bid': "{:.2f}".format(gold_info.bid - margins[0]['value'] - 0.3),
                     },
                     {
                         'symbol': 'XAGUSD',
-                        'ask': round(silver_info.ask + margins[2]['value'], 2),
-                        'bid': round(silver_info.bid - margins[3]['value'],2)
+                        'ask': "{:.2f}".format(silver_info.ask + margins[2]['value']),
+                        'bid': "{:.2f}".format(silver_info.bid - margins[3]['value'])
                     }
                 ]
         
@@ -98,8 +98,8 @@ def get_prices():
         dataOmrT = [
                 {
                     'symbol': 'XAUUSD',
-                    'ask': round(data[0]['ask'] * 1.4485, 3) + margins[7]['value'],
-                    'bid': round(data[0]['bid'] * 1.4485, 3) - margins[6]['value'],
+                    'ask': round(data[0]['ask'] * 1.4485+ margins[7]['value'], 3) ,
+                    'bid': round(data[0]['bid'] * 1.4485 - margins[6]['value'], 3) ,
                 },
                 {
                     'symbol': 'XAGUSD',
@@ -110,13 +110,13 @@ def get_prices():
         dataOmrGm = [
                 {
                     'symbol': 'XAUUSD',
-                    'ask': round(round(dataOmrT[0]['ask'] / 116.64, 3) + margins[5]['value'], 3),
-                    'bid': round(round(dataOmrT[0]['bid']/ 116.64, 3) - margins[4]['value'], 3),
+                    'ask': round((dataOmrT[0]['ask'] / 116.64) + margins[5]['value'], 3),
+                    'bid': round((dataOmrT[0]['bid']/ 116.64) - margins[4]['value'], 3),
                 },
                 {
                     'symbol': 'XAGUSD',
-                    'ask': round(round(dataOmrT[1]['ask'] / 1000, 3) + margins[5]['value'], 3),
-                    'bid': round(round(dataOmrT[1]['bid']/ 1000, 3) - margins[4]['value'], 3),
+                    'ask': round((dataOmrT[1]['ask'] / 1000) + margins[5]['value'], 3),
+                    'bid': round((dataOmrT[1]['bid']/ 1000) - margins[4]['value'], 3),
                 }
             ]
         response = {
