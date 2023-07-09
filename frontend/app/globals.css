@@ -71,15 +71,22 @@ body {
 .m-title{
   position: relative;
   padding: 10px;
-  background-color:#333;
+  background-color:#eeba2b;
   font-size: var(--font-size);
-  color: white;
+  color: black;
   font-weight: bold;
 
 }
 .price{
   font-weight: bold;
   font-size: 40px;
+}
+.price-usd{
+  font-weight: bold;
+  font-size: 50px;
+}
+.title-usd{
+  font-size: 50px;
 }
 body {
   background-color: black;

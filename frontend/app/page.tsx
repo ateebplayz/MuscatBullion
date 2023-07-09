@@ -87,10 +87,10 @@ export default function Home() {
                   <div className='m-hint'>BID</div>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span>Gold Ounce($)</span> <span className='price'>${data.data[0].bid}</span>
+                  <span className='title-usd'>Gold Ounce($)</span> <span className='price-usd'>${data.data[0].bid}</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span>Silver Ounce($)</span> <span className='price'>${data.data[1].bid}</span>
+                  <span className='title-usd'>Silver Ounce($)</span> <span className='price-usd'>${data.data[1].bid}</span>
                 </div>
               </div>
               <div className='col p-5 mt-5  d-flex flex-column m-card'>
@@ -123,10 +123,10 @@ export default function Home() {
                   <div className='m-hint'>ASK</div> <div className='m-title' >أسعار حية (24 قيراط)</div>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>${data.data[0].ask}</span> <span>($) أوقية الذهب</span>
+                  <span className='price-usd'>${data.data[0].ask}</span> <span className='title-usd'>($) أوقية الذهب</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span className='price'>${data.data[1].ask}</span> <span>($) أوقية الفضة</span>
+                  <span className='price-usd'>${data.data[1].ask}</span> <span className='title-usd'>($) أوقية الفضة</span>
                 </div>
               </div>
               <div className='col p-5 mt-5  d-flex flex-column m-card'>
