@@ -51,8 +51,9 @@ body {
 .m-card{
   width: 100%;
   font-size: var(--font-size-small);
-  border: 3px solid rgba(23, 23, 24, 0.555);
-  background-color: white;
+  border: 3px solid #222222;
+  color: white;
+  background-color: black;
   font-size: 32px;
   font-weight: bold;
   position: relative;
@@ -62,7 +63,7 @@ body {
   border-radius: 13px;
   padding: 10px;
   background-color: #eeba2b;
-  color: white;
+  color: black;
   font-size: var(--font-size);
   font-weight: bold;
 }
@@ -70,11 +71,15 @@ body {
 .m-title{
   position: relative;
   padding: 10px;
-  background-color:#f1f1f1;
+  background-color:#111111;
   font-size: var(--font-size);
+  color: white;
   font-weight: bold;
 
 }
 .price{
   font-weight: bold;
+}
+body {
+  background-color: black;
 }

@@ -73,7 +73,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='' style={{ height: '100vh' }}>
+    <div className='' style={{ backgroundColor:'black',minHeight: '100vh' }}>
       <div className='main-card pt-4'>
         <div className="d-flex p-3 justify-content-center text-white " >
           <div className='main-title' >MUSCAT BULLION</div>
