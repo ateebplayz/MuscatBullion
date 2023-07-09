@@ -71,7 +71,7 @@ body {
 .m-title{
   position: relative;
   padding: 10px;
-  background-color:#111111;
+  background-color:#333;
   font-size: var(--font-size);
   color: white;
   font-weight: bold;
