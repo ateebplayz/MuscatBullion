@@ -149,6 +149,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className='d-flex text-white justify-content-center p-3 align-center'>
+          <p style={{fontSize:'0.825rem', lineHeight:'1.25rem'}}>
+        Disclaimer:
+Muscat Bullion provides gold prices obtained from sources believed to be reliable, but we do not guarantee their accuracy. Our gold price charts are provided without warranty or claim of reliability. It is accepted by the site visitor on the condition that errors or omissions shall not be made the basis for any claim, demand or cause for action.
+          </p>
+        </div>
       </div>
 
     </div>
