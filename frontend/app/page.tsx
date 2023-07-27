@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
 import "bootstrap/dist/css/bootstrap.css";
+import './globals.css'
 const intialData = {
   "data":[
     {
@@ -76,12 +77,12 @@ export default function Home() {
     <div className='' style={{ backgroundColor:'black',minHeight: '100vh' }}>
       <div className='main-card pt-4'>
         <div className="d-flex p-3 justify-content-center text-white " >
-          <div className='main-title' >MUSCAT BULLION</div>
+          <div className='main-title md:main-title-m' >MUSCAT BULLION</div>
         </div>
-        <div className='d-flex justify-content-center p-3'>
-          <div className='col p-5 pb-0'>
-            <div className='row d-flex flex-column'>
-              <div className='col p-5  d-flex flex-column m-card'>
+        <div className='d-flex sh justify-content-center'>
+          <div className='col puwu pb-0'>
+            <div className='sh d-flex flex-md-column flex-md-wrap flex-column'>
+              <div className='col puwu mt-to d-flex flex-column m-card'>
                 <div className='d-flex justify-content-between card-mark '>
                   <div className='m-title'>LIVE PRICES (24 CARAT)</div>
                   <div className='m-hint'>BID</div>
@@ -93,7 +94,7 @@ export default function Home() {
                   <span className='title-usd'>Silver Ounce($)</span> <span className='price-usd'>${data.data[1].bid}</span>
                 </div>
               </div>
-              <div className='col p-5 mt-5  d-flex flex-column m-card'>
+              <div className='col puwu mt-20 d-flex flex-column m-card'>
                 <div className='card-mark'>
                   <div className='d-flex justify-content-between '>
                   <div className='m-title' >OMR PRICES LIVE (24 CARAT)</div>
@@ -102,23 +103,23 @@ export default function Home() {
                 </div>
 
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span>Gold Per Gram</span> <span className='price'>{data.dataOmrGm[0].bid} OMR</span>
+                  <span className='title-usd'>Gold Per Gram</span> <span className='price'>{data.dataOmrGm[0].bid} OMR</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span>Gold Ten Tola Bar</span> <span className='price'>{data.dataOmrT[0].bid} OMR</span>
+                  <span className='title-usd'>Gold Ten Tola Bar</span> <span className='price'>{data.dataOmrT[0].bid} OMR</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span>Silver Per Gram</span> <span className='price'>{data.dataOmrGm[1].bid} OMR</span>
+                  <span className='title-usd'>Silver Per Gram</span> <span className='price'>{data.dataOmrGm[1].bid} OMR</span>
                 </div>
                 <div className='d-flex mt-3 justify-content-between'>
-                  <span>Silver Kilo Bar</span> <span className='price'>{data.dataOmrT[1].bid} OMR</span>
+                  <span className='title-usd'>Silver Kilo Bar</span> <span className='price'>{data.dataOmrT[1].bid} OMR</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className='col p-5 pb-0'>
+          <div className='col puwu pb-0'>
             <div className='row d-flex flex-column'>
-              <div className='col p-5  d-flex flex-column m-card' >
+              <div className='col puwu mt-to d-flex flex-column m-card' >
                 <div className='d-flex justify-content-between card-mark'>
                   <div className='m-hint'>ASK</div> <div className='m-title' >أسعار حية (24 قيراط)</div>
                 </div>
@@ -129,7 +130,7 @@ export default function Home() {
                   <span className='price-usd'>${data.data[1].ask}</span> <span className='title-usd'>($) أوقية الفضة</span>
                 </div>
               </div>
-              <div className='col p-5 mt-5  d-flex flex-column m-card'>
+              <div className='col puwu mt-20 d-flex flex-column m-card'>
                 <div className='d-flex justify-content-between card-mark'>
                   <div className='m-hint'>SELL</div> <div className='m-title' >أسعار ريال عماني مباشر (24 قيراط)</div>
                 </div>
@@ -156,7 +157,6 @@ Muscat Bullion provides gold prices obtained from sources believed to be reliabl
           </p>
         </div>
       </div>
-
     </div>
   )
 }
