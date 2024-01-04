@@ -179,6 +179,6 @@ app.post('/api/margins/set', async (req,res) => {
         } else return res.json({msg: 'Margin ID Not Found. Check margins @ https://api.muscatbullion.com:5001/api/margins', code: 0})
     } else return res.json({msg: 'User Credentials/Token Invalid', code: 0})
 })
-app.listen(5001, () => {
+app.listen(5000, () => {
     console.log('App listening on ' + config.port)
 })
