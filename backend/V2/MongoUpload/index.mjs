@@ -46,7 +46,9 @@ async function getPublicIP() {
 getPublicIP()
 app.use(cors())
 app.use(express.json())
-
+function roundTo3DP(number) {
+    return (Math.round(number * 1000) / 1000).toFixed(3)
+}
 app.get('/api/prices', async (req,res) => {
     if (`${req.ip}` !== `${ip}`) {
 
@@ -55,37 +57,37 @@ app.get('/api/prices', async (req,res) => {
     return res.json({
         data: [
             {
-                ask: prices.data[0].ask + margins[1].value,
-                bid: prices.data[0].bid - margins[0].value,
+                ask: roundTo3DP(prices.data[0].ask + margins[1].value),
+                bid: roundTo3DP(prices.data[0].bid - margins[0].value),
                 symbol: 'XAUUSD'
             },
             {
-                ask: prices.data[1].ask + margins[2].value,
-                bid: prices.data[1].bid - margins[3].value,
+                ask: roundTo3DP(prices.data[1].ask + margins[2].value,),
+                bid: roundTo3DP(prices.data[1].bid - margins[3].value),
                 symbol: 'XAGUSD'
             },
         ],
         dataOmrGm: [
             {
-                ask: prices.dataOmrGm[0].ask + margins[5].value,
-                bid: prices.dataOmrGm[0].bid - margins[4].value,
+                ask: roundTo3DP(prices.dataOmrGm[0].ask + margins[5].value),
+                bid: roundTo3DP(prices.dataOmrGm[0].bid - margins[4].value),
                 symbol: 'XAUUSD'
             },
             {
-                ask: prices.dataOmrGm[1].ask + margins[9].value,
-                bid: prices.dataOmrGm[1].bid - margins[8].value,
+                ask: roundTo3DP(prices.dataOmrGm[1].ask + margins[9].value),
+                bid: roundTo3DP(prices.dataOmrGm[1].bid - margins[8].value),
                 symbol: 'XAGUSD'
             },
         ],
         dataOmrT: [
             {
-                ask: prices.dataOmrT[0].ask + margins[7].value,
-                bid: prices.dataOmrT[0].bid - margins[6].value,
+                ask: roundTo3DP(prices.dataOmrT[0].ask + margins[7].value),
+                bid: roundTo3DP(prices.dataOmrT[0].bid - margins[6].value),
                 symbol: 'XAUUSD'
             },
             {
-                ask: prices.dataOmrT[1].ask + margins[10].value,
-                bid: prices.dataOmrT[1].bid - margins[11].value,
+                ask: roundTo3DP(prices.dataOmrT[1].ask + margins[10].value),
+                bid: roundTo3DP(prices.dataOmrT[1].bid - margins[11].value),
                 symbol: 'XAGUSD'
             },
         ],
