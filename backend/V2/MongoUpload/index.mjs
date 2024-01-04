@@ -47,7 +47,7 @@ getPublicIP()
 app.use(cors())
 app.use(express.json())
 
-app.get('/api/margins', async (req,res) => {
+app.get('/api/prices', async (req,res) => {
     if (`${req.ip}` !== `${ip}`) {
 
     }
