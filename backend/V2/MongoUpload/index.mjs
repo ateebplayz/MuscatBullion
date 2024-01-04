@@ -51,7 +51,7 @@ app.get('/api/prices', async (req,res) => {
     if (`${req.ip}` !== `${ip}`) {
 
     }
-    const prices = (await axios.get('http://194.104.156.172:5000/api/prices?key=0921MND2')).data
+    const prices = (await axios.get('http://194.104.156.172:5001/api/prices?key=0921MND2')).data
     return res.json({
         data: [
             {
