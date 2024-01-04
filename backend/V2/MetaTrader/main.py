@@ -19,8 +19,8 @@ valid_api_keys = keys.split(',') if keys else []
 print(valid_api_keys)
 # Credentials
 
-MetaUser = 77286125 # Meta Trader 5 Login Username
-MetaPassword = '2iDtAxB!' # Meta Trader 5 Login Password
+MetaUser = 9999330233 # Meta Trader 5 Login Username
+MetaPassword = 'TdG*3sHy' # Meta Trader 5 Login Password
 MetaPath = 'C:/Program Files/MetaTrader 5/terminal64.exe' # Meta Trader 5 Path
 MetaServer = 'MetaQuotes-Demo' # Meta Trader 5 Server
 
