@@ -49,6 +49,12 @@ app.use(express.json())
 function roundTo3DP(number) {
     return (Math.round(number * 1000) / 1000).toFixed(3)
 }
+app.get('/api/margins', (req,res) => {
+    if (`${req.ip}` !== `${ip}`) {
+
+    }
+    return res.json({data: margins, code: 200})
+})
 app.get('/api/prices', async (req,res) => {
     if (`${req.ip}` !== `${ip}`) {
 
