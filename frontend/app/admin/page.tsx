@@ -13,10 +13,10 @@ function Admin() {
 
     const router = useRouter()
     const loginButton = () => {
-        router.push('/admin/login')
+        window.open('http://muscatbullion.com/prices/admin/login.html')
     }
     const setMargin = async () => {
-        const resp = await axios.get('http://muscatbullionproject.grabyourservices.com:5001/api/margins')
+        const resp = await axios.get('http://muscatbullionproject.grabyourservices.com:5000/api/margins')
         setMargins(resp.data.data || [])
     }
     setMargin()
