@@ -16,7 +16,7 @@ function Admin() {
         window.open('http://muscatbullion.com/prices/admin/login.html')
     }
     const setMargin = async () => {
-        const resp = await axios.get('http://muscatbullionproject.grabyourservices.com:5000/api/margins')
+        const resp = await axios.get('https://prices.grabyourservices.com:9000/api/margins')
         setMargins(resp.data.data || [])
     }
     setMargin()
