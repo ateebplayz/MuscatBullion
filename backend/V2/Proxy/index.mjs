@@ -1,5 +1,5 @@
-const express = require('express')
-const axios = require('axios')
+import express from 'express'
+import axios from 'axios'
 const app = express()
 const PORT = 5000
 const sourceServerUrl = 'http://localhost:5002/api/prices?key=0921MND2'
@@ -20,8 +20,7 @@ const fetchData = async () => {
 
 setInterval(() => {
   fetchData()
-  forwardData
-}, fetchInterval)
+}, 1000)
 
 app.use(cors())
 
