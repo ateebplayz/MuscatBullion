@@ -14,7 +14,7 @@ export const Editor = ({margin: {_id, id, value}}: {margin: margin}) => {
         setVal(e.target.value)
     }
     const handleBtnClick = async () => {
-        const resp = await axios.post('https://prices.grabyourservices.com:9000/api/margins/set', 
+        const resp = await axios.post('https://api.muscatbullion.com:9000/api/margins/set', 
         {
             token: localStorage.getItem('token'),
             value: Number(val),
